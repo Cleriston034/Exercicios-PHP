@@ -1,0 +1,6 @@
+$mensagem = "ola";
+
+$mensagem .= " mundo";
+$mensagem .= " do php!";
+
+echo "$mensagem";
