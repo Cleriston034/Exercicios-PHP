@@ -1,0 +1,10 @@
+valor1 = "10";
+$valor2 = "10";
+
+echo "teste de igualdade sinples\n";
+
+var_dump($valor1 == $valor2);
+
+echo "teste a igualdade idêntica \n";
+
+var_dump($valor1 === $valor2);
