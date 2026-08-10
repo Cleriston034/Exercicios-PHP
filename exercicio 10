@@ -1,0 +1,6 @@
+$tentativa = 1;
+
+do {
+    echo "tentativa número: $tentativa \n";
+    $tentativa++;
+}   while ($tentativa <= 3);
