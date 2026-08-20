@@ -1,0 +1,51 @@
+<?php
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+class aluno {
+    private string $nome;
+    private array $notas = [];
+    
+    public function __construct(string $nome) {
+        $this->nome = $nome;
+    }
+    public function adicionarNota(float $nota): void {
+        if ($nota >= 0 && $nota <= 10) {
+            $this->notas[] = $nota;
+        }   else {
+            echo "Nota {$nota} inválida! Insira um valor entre 0 e 10. \n";
+        }
+    }
+    public function calcularMedia(): float {
+        if (count($this->notas) === 0) {
+            return 0.0;
+        }
+        $soma = array_sum($this->notas);
+        return $soma / count($this->notas);
+    }
+    public function IsAprovado(): bool {
+        return $this->calcularMedia() >= 7.0;
+    }
+    public function getNome(): string {
+        return $this->nome;
+    }
+}
+
+$aluno1 = new Aluno("jose");
+
+$aluno1->adicionarNota(8.5);
+$aluno1->adicionarNota(6.0);
+$aluno1->adicionarNota(7.5);
+$aluno1->adicionarNota(12.0);
+
+$media = $aluno1->calcularMedia();
+$aprovado = $aluno1->IsAprovado();
+
+echo "Aluno: " . $aluno1->getNome() . "\n";
+echo "Média: " . number_formart($media, 2) . "\n";
+echo "Status: " . ($aprovado ? "Aprovado!" ; "Reprovado!") . "\n";
