@@ -1,0 +1,30 @@
+
+class aluno {
+    private string $nome;
+    private array $notas = [];
+    
+    public function __construct(string $nome) {
+        $this->nome = $nome;
+    }
+    
+    public function adicionarnota(float $nota): void {
+        if ($nota >= 0 && $nota <= 10 ) {
+            $this->notas[] = $nota;
+        }
+    }
+    
+    public function calcularmedia(): float {
+        if (empty($this->notas)) return 0.0;
+        return array_sum($this->notas) / count($this->notas);
+    }
+    public function isaprovado(): bool {
+        return $this->calcularmedia() >= 7.0;
+    }
+}
+
+$aluno = new aluno("joão");
+$aluno->adicionarnota(8.5);
+$aluno->adicionarnota(7.0);
+
+echo "Média: " . $aluno->calcularmedia() . "\n";
+echo "Aprovado?" . ($aluno->isaprovado() ? " Sim" : " Não") . "\n";
