@@ -1,1 +1,19 @@
+class AcessoSistema {
+    
+    private static int $totalacessos = 0;
+    
+    public function __construct() {
+        
+        self::$totalacessos++;
+    }
+    
+    public static function getTotalacessos(): int {
+        return self::$totalacessos;
+    }
+}
 
+$acesso1 = new AcessoSistema();
+$acesso2 = new AcessoSistema();
+$acesso3 = new AcessoSistema();
+
+echo "Total de acessos:" . AcessoSistema::getTotalacessos();
