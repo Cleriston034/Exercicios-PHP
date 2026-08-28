@@ -1,1 +1,42 @@
 
+
+class livro {
+    public string $titulo;
+    public string $autor;
+    public bool $disponivel;
+    
+    public function __construct(string $titulo, string $autor) {
+        $this->titulo = $titulo;
+        $this->autor = $autor;
+        $this->disponivel = true;
+    }
+    
+    public function emprestar(): void {
+        if(!$this->disponivel) {
+            throw new exception("O livro '{$this->titulo}' ja está emprestado.");
+        }
+        $this->disponivel = false;
+    }
+    
+    public function devolver(): void {
+        $this->disponivel = true;
+    }
+}
+
+$livro1 = new Livro ("Dom Casnurro", "Machado de Assis");
+
+echo "Livro:" . $livro1->titulo . "\n";
+
+echo "Disponivel?" . ($livro1->disponivel ? "Sim" : "Não") . "\n\n";
+
+echo "Emprestando o livro...\n";
+
+$livro1->emprestar();
+
+echo "Disponivel?" . ($livro1->disponivel ? "Sim" : "Não") . "\n\n";
+
+echo "Devolvendo livro...\n";
+
+$livro1->devolver();
+
+echo "Disponivel?" . ($livro1->disponivel? "Sim" : "Não") ."\n";
