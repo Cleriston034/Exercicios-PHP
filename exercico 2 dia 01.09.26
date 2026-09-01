@@ -1,0 +1,16 @@
+class livro {
+    public string $titulo;
+    public string $autor;
+    public int $paginas;
+    
+    public function __construct(string $titulo, string $autor, int $paginas) {
+    $this->titulo = $titulo;
+    $this->autor = $autor;
+    $this->paginas = $paginas;
+    }
+} 
+    $livro1 = new Livro("Senhor dos Aneis ", "J.J.R Tolkien", "1200");
+    $livro2 = new Livro("As Cronicas de Marte", "George R.R. Martin e Gardner Dozois", "495");
+    
+    echo "Livro 1 {$livro1->titulo} | Autor: {$livro1->autor} | Páginas: {$livro1->paginas} \n";
+    echo "livro 2 {$livro2->titulo} | Autor: {$livro2->autor} | Páginas: {$livro2->paginas} \n";
