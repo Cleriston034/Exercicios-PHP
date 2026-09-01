@@ -1,0 +1,19 @@
+
+class livro {
+    public string $titulo;
+    public string $autor;
+    public int $paginas;
+} 
+
+$livro1 = new Livro();
+$livro1->titulo = "O Senhor dos Anéis";
+$livro1->autor = "J.J.R Tolkien";
+$livro1->paginas = 1200;
+
+$livro2 = new Livro();
+$livro2->titulo = "As Crônicas de Marte";
+$livro2->autor = "George R. R. Martin e Gardner dozois";
+$livro2->paginas = 495;
+
+echo "Livro 1 {$livro1->titulo}\n Autor: {$livro1->autor}\n Paginas: {$livro1->paginas} \n";
+echo "Livro 2 {$livro2->titulo}\n Autor: {$livro2->autor}\n Paginas: {$livro2->paginas} \n";
